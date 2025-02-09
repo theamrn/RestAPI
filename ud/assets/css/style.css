@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #303465;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Image */
+.container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg.png") no-repeat center bottom;
+    background-size: contain; 
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Heading */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Search Box */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Input */
+.search-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 10px;
+    background: none;
+    color: #303465;
+}
+
+/* Placeholder Styling */
+.search-container input::placeholder {
+    color: #ccc;
+}
+
+/* Search Icon */
+.search-container .icon {
+    width: 24px;
+    height: 24px;
+    background: url("../images/search.svg") no-repeat center;
+    background-size: contain;
+    margin-left: 10px;
+}
+
+/* Search Button */
+.search-button {
+    margin-top: 15px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #303465;
+    background: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-button:hover {
+    background: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    .search-container {
+        max-width: 90%;
+    }
+
+    .search-button {
+        width: 80%;
+    }
+
+    /* Adjust background for mobile */
+    .container::after {
+        height: 100%;
+        background-size: contain; 
+    }
+}
